@@ -9,6 +9,7 @@
     <script src='resource/main.js'></script>
 </head>
 <body>
+    
     <header>
         <h1>So sánh LET và VAR</h1>
     </header>
@@ -22,6 +23,72 @@
         
 
     </nav>
+ <div >
+    <h2>Phân biệt kiểu biến var, let, trong JavaScript</h2>
+    <h4>1. Giới Thiệu</h4>
+    <p>ES6 (viết tắt của ECMAScript 6) là một tập hợp các kỹ thuật nâng cao của Javascript. ECMAScript do hiệp hội các nhà sản xuất máy tính Châu Âu đề xuất làm tiêu chuẩn của ngôn ngữ Javascript. Bạn cứ nghĩ xem hiện nay có khá nhiều trình duyệt Browser ra đời và nếu mỗi Browser lại có cách chạy Javascript khác nhau thì các trang web không thể hoạt động trên tất cả các trình duyệt đó được, vì vậy cần có một chuẩn chung để bắt buộc các browser phải phát triển dựa theo chuẩn đó.
+
+        Một trong những tính năng nổi bật của ES6 đó là sự bổ sung let và const phục vụ cho việc khai báo biến dữ liệu. Vậy tại sao lại cần tới let và const dù trước đó đã có var để khai báo biến, thì ở bài viết này chúng ta sẽ cùng tìm hiểu lý do của từng kiểu khai báo biến.</p>
+    <h4>2. Phân Biệt</h4>
+    <h3>2.1. Biến var</h3>
+    <p>Như đã biết trong Vanilla Javascript, với từ khóa var chúng ta có thể khai báo đa dạng các kiểu biến như number, string, boolean, etc. Trừ trường hợp được khai báo bên trong 1 function (khi đó biến var sẽ có scope là function/locally scoped), biến var sẽ có scope là globally scoped. Đặc biệt, biến var còn có thêm tính chất hoisting: nghĩa là dù khai báo ở đâu thì biến đều sẽ được đem lên đầu scope trước khi code được thực hiện.
+
+        Lấy ví dụ:</p>
+        <article>
+
+        
+        <pre>
+            <code>
+                console.log (greeting);
+                var greeting = "say hello";
+            </code>
+        </pre>
+        </article>
+        <p>sẽ được biên dịch là :</p>
+        <article>
+            <pre>
+                <code>
+                    var greeting;
+                    console.log(greeting); // greeting is undefined
+                    greeting = "say hello";
+                </code>
+            </pre>
+        </article>
+        <p>Nhưng có một vấn đề với biến var. Giả sử ta có ví dụ như sau:</p>
+        <article>
+            <pre>
+                <code>
+                    var greeting = "hey hi";
+                    var times = 4;
+
+                    if (times > 3) {
+                    var greeting = "say Hello instead"; 
+                    }
+
+                    console.log(greeting); //"say Hello instead"
+                </code>
+            </pre>
+        </article>
+        <p>
+            Vì thỏa điều kiện if nên greeting khi này sẽ có giá trị là "say Hello instead" và sẽ vẫn giữ nguyên giá trị này sau khi thoát ra khỏi block if. Điều này sẽ không có gây vấn đề gì nhưng nếu trong trường hợp code của chúng ta lên đến hàng trăm, hàng nghìn dòng code, hoặc chúng ta cũng không biết được giá trị của biến liệu có bị thay đổi ở đoạn code nào sẽ dẫn đến việc debug là vô cùng khó khăn. Để giải quyết vấn đề trên thì ES6 cung cấp cho chúng ta thêm 2 cách khác để khai báo biến bao gồm let và const.
+        </p>
+        <article>
+        <!-- article là phần tử để bao bọc nội dung độc lập, nó có thể là một bài post của diễn đàn, một bài viết của trang, một bài báo, một bình luận ... hoặc bất kỳ một nội dung độc lập nào. -->
+       
+       
+        <pre>
+            <code>
+                funtion demo(){
+                    let a;
+                    let b;
+    
+                }                                                                                         
+                                                                                            
+            </code>
+            
+        </pre>
+    </article>
+</div>
     
 </body>
 </html>
